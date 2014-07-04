@@ -39,3 +39,6 @@
   (interactive)
   (save-some-buffers t))
 (add-hook 'focus-out-hook 'save-all)
+
+(global-linum-mode 1)
+(defalias 'list-buffers 'ibuffer)
