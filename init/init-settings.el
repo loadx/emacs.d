@@ -44,4 +44,7 @@
 (global-linum-mode 1)
 (setq linum-format "%4d ")
 
+;; remove line wrap
+(setq-default truncate-lines t)
+
 (defalias 'list-buffers 'ibuffer)
