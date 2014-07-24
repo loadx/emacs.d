@@ -40,5 +40,8 @@
   (save-some-buffers t))
 (add-hook 'focus-out-hook 'save-all)
 
+;; add line number gutter and give it ample width
 (global-linum-mode 1)
+(setq linum-format "%4d ")
+
 (defalias 'list-buffers 'ibuffer)
