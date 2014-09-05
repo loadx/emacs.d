@@ -9,3 +9,7 @@
 
 (load-theme 'twilight t)
 (menu-bar-mode -1)
+(custom-theme-set-faces
+ 'twilight
+ '(font-lock-warning-face ((t (:foreground "yellow"))))
+)
