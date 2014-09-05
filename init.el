@@ -9,9 +9,9 @@
         init-bootstrap
 
 	;;; These all use the (quelpa) form.
-        init-ack  
+        init-ack
         init-anzu
-        init-appearance 
+        init-appearance
         init-completion
         init-crontab
         init-defuns
@@ -25,7 +25,7 @@
         init-markdown
         init-modeline
         init-parens
-	init-php
+        init-php
         init-projectile
         init-python
         init-ruby
