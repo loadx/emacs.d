@@ -35,6 +35,7 @@
         init-web
         init-yaml
         init-fic
+        init-sql-indent
 		 ))
 (require 'server)
 (unless (server-running-p)
