@@ -34,6 +34,7 @@
         ;;; init-snippets
         init-web
         init-yaml
+        init-fic
 		 ))
 (require 'server)
 (unless (server-running-p)
