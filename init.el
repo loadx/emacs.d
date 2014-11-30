@@ -14,6 +14,7 @@
         init-appearance
         init-completion
         init-crontab
+        init-defaults
         init-defuns
         init-dired
         init-expand-region
