@@ -2,7 +2,8 @@
 
 (quelpa '(twilight-theme
 	  :repo "developernotes/twilight-theme"
-	  :fetcher github))
+	  :fetcher github
+          :stable nil))
 
 (quelpa 'dash)
 (require 'dash)

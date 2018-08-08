@@ -1,6 +1,6 @@
 (provide 'init-dired)
 
-(quelpa 'dired+)
+(quelpa 'dired+ :stable t)
 (require 'dired+)
 
 (setq ls-lisp-use-insert-directory-program t)

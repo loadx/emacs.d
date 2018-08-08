@@ -1,27 +1,22 @@
 (provide 'init-go)
 
-(quelpa 'go-mode)
+;; (add-to-list 'load-path (expand-file-name "/usr/local/go/misc/emacs"))
 
-(setq brew_path (getenv "HOMEBREWPATH"))
-(setq go_version (getenv "GOVERSION"))
+(if (require 'go-mode-load nil t)
+    (quelpa '(go-mode :repo "dominikh/go-mode.el" :fetcher github))
+  (quelpa '(go-flycheck :repo "dougm/goflymake" :fetcher github)))
+;;    (require 'go-mode-load))
 
-;; calc path to go-mode-load
-(setq go_emacs_file
- (concat
-   (file-name-as-directory brew_path) "Cellar/go/"
-   (file-name-as-directory go_version) "libexec/misc/emacs"
-  )
-)
+(quelpa 'go-eldoc)
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)
 
-(setq go_emacs_file nil)
-(if go_emacs_file (require go_emacs_file))
 (quelpa 'go-errcheck)
 
 (eval-after-load "go-mode"
   '(progn
-
-     (add-hook 'before-save-hook #'gofmt-before-save)
-     (add-to-list 'flycheck-checkers 'go-gofmt)))
+     (setq gofmt-command "goimports")
+     (add-hook 'before-save-hook #'gofmt-before-save)))
 
 (add-hook 'go-mode-hook (lambda ()
                           (set (make-local-variable 'company-backends) '(company-go))
